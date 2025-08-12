@@ -1,0 +1,28 @@
+Header{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    margin-left: 240px;
+
+    img{
+        width: 150px;
+        margin-left: 100px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    .nav-header{
+        margin-left: 950px;
+        ul{
+            display: flex;
+            list-style: none;
+        }
+        li{
+            margin-right: 80px;
+            margin-left: -40px;
+        }
+        a{
+            color: black;
+        }
+    }
+}

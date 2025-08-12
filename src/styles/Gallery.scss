@@ -1,0 +1,40 @@
+.gallery-content{
+    margin-top: 40px;
+    margin-bottom: 30px;
+    width: 1240px;
+    background-color: #F6F6F6;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: space-around;
+    .cards-gallery{
+        position: relative;
+        overflow: hidden;
+        margin-top: 40px;
+        margin-bottom: 20px;
+
+        img{
+            width: 340px;
+            height: 340px;
+            display: block;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        h2{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            margin: 0;
+            padding: 1rem;
+            font-size: 16px;
+            color: white;
+            
+        }
+    }
+}
