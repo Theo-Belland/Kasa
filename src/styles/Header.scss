@@ -12,17 +12,23 @@ Header{
     }
 
     .nav-header{
-        margin-left: 950px;
-        ul{
-            display: flex;
+        margin-left: 910px; 
+        ul {
             list-style: none;
-        }
-        li{
-            margin-right: 80px;
-            margin-left: -40px;
-        }
-        a{
+            display: flex;
+            gap: 20px;
+
+        li a {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            text-decoration: none;
             color: black;
+            padding-bottom: 5px;
+            &.active {
+            border-bottom: 2px solid black;
+            }
+          }
         }
     }
 }

@@ -1,0 +1,50 @@
+.about-content{
+    .about-pic img{
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1240px;
+        height: 223px;
+        border-radius: 20px;
+    }
+    .dropdown-about{
+        margin-top: 30px;
+    }
+
+.dropdown-text{
+    width: 1000px;
+     margin-left: 450px;
+    button{
+        background-color: #FF6060;
+        border: none;
+        border-radius: 5px; 
+        width: 1000px;
+        margin-top: 15px;
+        height: 52px;
+        .dropdown-title{
+            font-size: 18px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            margin-right: 850px;
+        }
+        &.open{
+            transform: rotate(180deg);
+        }
+    }
+        .dropdown-desc {
+        background-color: #f6f6f6;   /* fond gris clair */
+        color: #333;                 /* couleur du texte */
+        font-size: 16px;              /* taille du texte */
+        line-height: 1.5;             /* espacement vertical */
+        padding: 15px;                /* espace interne */
+        margin: 0;                    /* pas d'espace autour, collé au bouton */
+        width: 100%;                  /* prend toute la largeur du parent */
+        border-radius: 0 0 5px 5px;   /* arrondi en bas */
+        box-sizing: border-box;  
+        margin-bottom: 15px;
+        }
+
+
+} 
+}
