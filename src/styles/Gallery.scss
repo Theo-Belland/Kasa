@@ -38,3 +38,15 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .gallery-content{
+        flex-direction: column;
+        max-width: 335px;
+        background-color: white;
+
+        .cards-gallery{
+            margin-top: -5px;
+        }
+    }
+}

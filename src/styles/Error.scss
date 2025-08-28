@@ -1,0 +1,51 @@
+.Error{
+    .Error-title{
+        margin-top: 50px;
+        text-align: center;
+        h1{
+            font-size: 288px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #FF6060;
+        }
+    }
+    .Error-text{
+        margin-top: 50px;
+        text-align: center;
+        font-size: 36px;
+        font-weight: 500;
+        color: #FF6060;
+        .line-break{
+            display: none;
+        }
+        .Text{
+            margin-bottom: 100px;
+        }
+        .Error-Back-Home{
+            font-size: 18px;
+            color: black;
+            margin-bottom: 100px;
+        }
+    }
+
+}
+
+@media (max-width: 768px) { 
+    .Error{
+        .Error-title h1{
+            font-size: 96px;
+        }
+        .Error-text {
+            font-size: 18px;
+            .line-break{
+                display: block;
+            }
+            .Error-Back-Home{
+                font-size: 14px;
+            }
+        }
+    }
+
+
+
+}

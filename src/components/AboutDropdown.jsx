@@ -8,12 +8,11 @@ function AboutDropdown({title, description}){
         <div className="dropdown-text">
             <button onClick={() => setIsOpen((prev) => !prev)}>
                 <span className="dropdown-title">{title}</span>
-                <img src="/Dropdvector.png" alt=""
-                style={{transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",transition: "transform 0.3s ease",
-            height: "14px",
-            width: "24px",
-            alignSelf: "center",}}>
-                </img>
+                <img 
+                    src="/Dropdvector.png" 
+                    alt="chevron" 
+                    className={`drop ${isOpen ? "open" : ""}`} 
+                />
             </button>
             {isOpen && <div className="dropdown-desc">{description}</div>}
         </div>

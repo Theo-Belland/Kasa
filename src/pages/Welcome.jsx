@@ -8,7 +8,7 @@ function Welcome() {
       <div className="welcome-Pic-Text">
         <img src={WelcomePic} alt="Accueil" />
         <div className="opacifier">
-          <h1>Chez vous, partout et ailleurs</h1>
+          <h1>Chez vous,<span className="line-break"></span> partout et ailleurs</h1>
         </div>
       </div>
       <div className="Gallery-card">

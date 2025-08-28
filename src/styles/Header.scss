@@ -1,34 +1,56 @@
-Header{
-    font-family: 'Montserrat', sans-serif;
-    display: flex;
-    align-items: center;
-    margin-left: 240px;
+Header {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* ← équilibre logo et menu */
+  max-width: 1240px; /* largeur max */
+  margin: 0 auto;    /* centré */
+  padding: 15px 20px; /* un peu de respiration */
 
-    img{
-        width: 150px;
-        margin-left: 100px;
-        margin-top: 15px;
-        margin-bottom: 30px;
-    }
+  img {
+    width: 210px;
+    margin-right: 837px;
+  }
 
-    .nav-header{
-        margin-left: 910px; 
-        ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
+  .nav-header {
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
 
-        li a {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            font-size: 18px;
-            text-decoration: none;
-            color: black;
-            padding-bottom: 5px;
-            &.active {
-            border-bottom: 2px solid black;
-            }
-          }
+      li a {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        text-decoration: none;
+        color: black;
+        padding-bottom: 5px;
+
+        &.active {
+          border-bottom: 2px solid black;
         }
+      }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  Header {
+    flex-direction: row;
+    align-items: center;
+    gap: 105px; /* espace entre logo et nav */
+
+    img {
+      width: 100px;
+      margin: 0;
+    }
+
+    .nav-header ul {
+      gap: 15px;
+      li a{
+        font-size: 12px;
+
+      }
+    }
+  }
 }

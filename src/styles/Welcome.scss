@@ -1,9 +1,12 @@
 .welcome-Pic-Text{
     position: relative;
-    width: 1240px;
+    max-width: 1240px;
     height: 223px;
     margin-left: auto;
     margin-right: auto;
+    .line-break{
+        display: none;
+    }
     img{
         width: 100%;
         height: 100%;
@@ -26,3 +29,37 @@
         text-align: center;
     }
 }
+
+@media (max-width: 768px) { 
+    .welcome-Pic-Text{
+        height: auto;
+        margin-top: 20px;
+
+        img{
+            width: 90%;
+            height: 111px;
+            margin-left: 15px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+        .opacifier{
+            width: 90%;
+            height: 111px;
+            margin-left: 15px;
+            border-radius: 10px;
+        }
+        .line-break{
+        display: block;
+    }
+        h1 {
+            font-size: 24px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-align: left;      /* aligne à gauche */
+            max-width: 225px;   
+            margin-left: -100px;
+            }
+
+            }
+}
+

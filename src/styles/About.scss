@@ -1,50 +1,112 @@
-.about-content{
-    .about-pic img{
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        width: 1240px;
-        height: 223px;
-        border-radius: 20px;
-    }
-    .dropdown-about{
-        margin-top: 30px;
+.about-content {
+  .about-pic img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;              // occupe toute la largeur dispo
+    max-width: 1240px;        // mais ne dépasse jamais 1240px
+    height: 223px;            // ta hauteur fixe
+    border-radius: 20px;
+    object-fit: cover;        // pour garder un rendu propre si ça resize
+  }
+
+  .dropdown-about {
+    margin-top: 30px;
+  }
+
+  .dropdown-text {
+    width: 100%;
+    max-width: 1000px;   // largeur max sur desktop
+    margin: 0 auto;      // centre horizontalement
+    padding: 0 10px;     // petite marge intérieure pour éviter de coller aux bords
+
+    .drop {
+    height: 14px;
+    width: 24px;
+    align-self: center;
+    transition: transform 0.3s ease; // animation fluide
+    transform: rotate(0deg);  
+    margin-right: 15px;       // fermé par défaut
     }
 
-.dropdown-text{
-    width: 1000px;
-     margin-left: 450px;
-    button{
-        background-color: #FF6060;
-        border: none;
-        border-radius: 5px; 
-        width: 1000px;
-        margin-top: 15px;
-        height: 52px;
-        .dropdown-title{
-            font-size: 18px;
-            font-weight: 700;
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            margin-right: 850px;
-        }
-        &.open{
-            transform: rotate(180deg);
-        }
+    .drop.open {
+    transform: rotate(180deg);       // ouvert
     }
+
+    button {
+      background-color: #FF6060;
+      border: none;
+      border-radius: 5px; 
+      width: 100%;
+      max-width: 1000px; // jamais plus large que le parent
+      margin: 15px auto 0;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; // espace entre titre et icône (si tu as une flèche)
+
+      .dropdown-title {
+        font-size: 18px;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+        color: white;
+        margin-left: 15px;
+      }
+
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
+
         .dropdown-desc {
-        background-color: #f6f6f6;   /* fond gris clair */
-        color: #333;                 /* couleur du texte */
-        font-size: 16px;              /* taille du texte */
-        line-height: 1.5;             /* espacement vertical */
-        padding: 15px;                /* espace interne */
-        margin: 0;                    /* pas d'espace autour, collé au bouton */
-        width: 100%;                  /* prend toute la largeur du parent */
-        border-radius: 0 0 5px 5px;   /* arrondi en bas */
-        box-sizing: border-box;  
-        margin-bottom: 15px;
+        background-color: #f6f6f6;
+        color: #333;
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 15px;
+        margin: 0; // 👈 on enlève le "0 0 15px 0"
+        width: 100%;
+        border-radius: 0 0 5px 5px;
+        box-sizing: border-box;
         }
 
 
-} 
+        .dropdown-desc.open {
+        display: block;       // visible uniquement quand ouvert
+        margin-bottom: 15px;  // 👈 marge uniquement quand ouvert
+        }
+
+  }
+}
+
+// Responsive mobile
+@media (max-width: 768px) {
+  .about-content {
+    .about-pic img {
+        max-width: 335px;
+        width: 100%;
+        height: 111px;        // hauteur figée
+        object-fit: cover;    // recadre propre, pas de blanc
+        border-radius: 20px;
+        }
+
+
+    .dropdown-text {
+      max-width: 335px; // limite sur mobile
+      padding: 0;
+
+      button{
+        height: 30px;
+        .dropdown-desc {
+            max-width: 335px;
+            width: 100%;
+        }
+        .dropdown-title{
+            margin-left: 10px;
+        }
+        img{
+            margin-right: 5px;
+        }
+      }
+    }
+  }
 }

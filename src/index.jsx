@@ -6,6 +6,7 @@ import Layout from "./components/Layout";
 import Welcome from "./pages/Welcome";
 import Lodging from "./pages/Lodging";
 import About from "./pages/About";
+import Error from "./pages/Error";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route index element={<Welcome />} />
           <Route path="logement/:logementId" element={<Lodging />} />
           <Route path="a-propos" element={<About />} /> {/* ← pas de / au début */}
+          <Route path="*" element={<Error />}/> 
         </Route>
       </Routes>
     </BrowserRouter>
