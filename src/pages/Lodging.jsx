@@ -10,54 +10,52 @@ function Lodging() {
   const { logementId } = useParams();
   const logement = Logements.find((item) => item.id === logementId);
 
-  if (!logement) {
-    return <Error />;
-  }
+  if (!logement) return <Error />;
+
+  const { title, location, tags, rating, host, description, equipments, pictures } = logement;
 
   return (
     <div className="lodging-page">
-      <Slider pictures={logement.pictures} />
+      <Slider pictures={pictures} />
 
+      {/* HEADER */}
       <div className="lodging-header">
-        {/* Infos logement */}
         <div className="lodging-info">
-          <h1>{logement.title}</h1>
-          <h3>{logement.location}</h3>
-        </div>
-
-        {/* Tags + Rating déplacés dans le header */}
-        <div className="lodging-tag">
-          <div className="tags">
-            {logement.tags.map((tag, index) => (
-              <span className="tag" key={index}>
-                {tag}
-              </span>
-            ))}
-          </div>
-          <div className="rating">
-            <StarRating rating={logement.rating} />
-          </div>
-        </div>
-
-        {/* Infos hôte */}
-        <div className="lodging-host">
-          <span className="host-name">{logement.host.name}</span>
-          <img src={logement.host.picture} alt={logement.host.name} />
+          <h1>{title}</h1>
+          <h3>{location}</h3>
         </div>
       </div>
 
-      {/* Dropdowns */}
+      {/* TAGS + RATING + HOST */}
+      <div className="lodging-tag">
+        <div className="tags">
+          {tags.map(tag => (
+            <span key={tag} className="tag">{tag}</span>
+          ))}
+        </div>
+
+        <div className="rating-host">
+          {/* HOST au-dessus des étoiles sur PC */}
+          <div className="lodging-host">
+            <span className="host-name">{host.name}</span>
+            <img src={host.picture} alt={host.name} />
+          </div>
+
+          <div className="rating">
+            <StarRating rating={rating} />
+          </div>
+        </div>
+      </div>
+
+      {/* DROPDOWNS */}
       <div className="DropDown-lodging">
-        <AboutDropdown
-          title="Description"
-          description={logement.description}
-        />
+        <AboutDropdown title="Description" description={description} />
         <AboutDropdown
           title="Equipement"
           description={
             <ul>
-              {logement.equipments.map((item, index) => (
-                <li key={index}>{item}</li>
+              {equipments.map(item => (
+                <li key={item}>{item}</li>
               ))}
             </ul>
           }
